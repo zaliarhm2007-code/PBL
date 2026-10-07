@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang='id'><head><title>Kelola Daftar Pesanan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0B1325',
+                            darkCard: '#0F172A',
+                            darkInput: '#1E293B',
+                            yellow: '#FACC15',
+                            yellowHover: '#EAB308',
+                            slateBg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head><body class='font-sans antialiased'>
+<div class="flex h-screen overflow-hidden bg-brand-slateBg">
+    
+    <aside class="w-[280px] bg-brand-navy text-slate-300 flex flex-col justify-between shadow-xl shrink-0 z-20 h-screen">
+        <div>
+            <!-- Brand Header -->
+            <div class="p-6 border-b border-slate-800/60 flex items-center gap-3">
+               <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-md border-2 border-slate-900 object-cover bg-white">
+                <div>
+                    <h1 class="text-base font-extrabold tracking-tight text-white leading-none">KICKDROPSHOE</h1>
+                    <p class="text-[10px] text-brand-yellow font-bold uppercase tracking-widest mt-1">OWNER</p>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="p-4 space-y-2">
+                
+            <a href="dashboard_owner.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-pie-chart w-5"></i> Dashboard
+            </a>
+            <a href="laporan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-chart-line w-5"></i> Laporan Pendapatan
+            </a>
+            <a href="tambah_pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-plus w-5"></i> Tambah Pesanan
+            </a>
+                <a href="pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 text-white font-extrabold transition-all">
+                    <i class="fas fa-list-ul w-5"></i> Daftar Pesanan
+                </a>
+            <a href="akun.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-user w-5"></i> Profil Akun
+            </a>
+            </nav>
+        </div>
+
+        <!-- User Profile Pill at Bottom -->
+        <div class="p-4 border-t border-slate-800/60 m-4 bg-slate-800/40 rounded-2xl">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 bg-brand-yellow text-slate-900 font-extrabold rounded-full flex items-center justify-center text-xs shadow-sm">
+                    SA
+                </div>
+                <div>
+                    <p class="text-xs font-extrabold text-white leading-tight">Super Admin</p>
+                    <p class="text-[10px] text-emerald-400 font-semibold">Online</p>
+                </div>
+            </div>
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full py-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-all border border-slate-700/50">
+                <i class="fas fa-sign-out-alt"></i> Keluar
+            </a>
+        </div>
+    </aside>
+    
+    <main class="flex-1 flex flex-col h-full overflow-y-auto">
+        <header class="bg-white border-b border-slate-200 px-8 py-5 flex justify-between items-center sticky top-0 z-10 shrink-0">
+            <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">Kelola Daftar Pesanan</h2>
+            <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-600 flex items-center gap-2"><i class="far fa-calendar"></i> 17 Sep 2026</div>
+        </header>
+        <div class="p-8 flex gap-6 h-[calc(100vh-81px)] overflow-hidden">
+            <div class="w-[380px] flex flex-col gap-4 shrink-0 h-full overflow-hidden">
+                <div class="space-y-3 shrink-0">
+                    <div class="relative"><i class="fas fa-search absolute left-4 top-3.5 text-slate-400 text-sm"></i><input type="text" id="order-search-input" class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-yellow" placeholder="Cari ID / Nama Customer..."></div>
+                    <div class="flex gap-2">
+                        <select id="order-status-select" class="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs font-bold text-slate-700 outline-none"><option>Semua Status</option><option>Diterima</option><option>Diproses</option><option>Selesai</option></select>
+                        <button class="w-10 h-10 bg-brand-darkCard text-white rounded-xl flex items-center justify-center text-xs font-bold shadow-sm"><i class="fas fa-filter"></i></button>
+                    </div>
+                </div>
+                <div class="flex-1 overflow-y-auto space-y-3 pr-1">
+                    <div class="order-card-item p-5 rounded-2xl border-2 border-brand-yellow bg-yellow-50/30 shadow-sm cursor-pointer relative">
+                        <div class="flex justify-between items-start mb-1"><h4 class="font-extrabold text-slate-900 text-sm">#0881 – Budi Santoso</h4><span class="px-2.5 py-1 bg-yellow-100 text-yellow-800 rounded-md text-[10px] font-extrabold">Diproses</span></div>
+                        <p class="text-xs font-medium text-slate-500">2 Barang • Express (1–2 Hari)</p>
+                        <p class="text-sm font-black text-slate-900 mt-2">Rp 105.000</p>
+                    </div>
+                    <div class="order-card-item p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer">
+                        <div class="flex justify-between items-start mb-1"><h4 class="font-bold text-slate-900 text-sm">#0882 – Sari Ayu</h4><span class="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md text-[10px] font-extrabold">Diterima</span></div>
+                        <p class="text-xs font-medium text-slate-500">1 Barang • Reguler</p>
+                        <p class="text-sm font-black text-slate-900 mt-2">Rp 35.000</p>
+                    </div>
+                    <div class="order-card-item p-5 rounded-2xl border border-slate-200 bg-white hover:border-slate-300 cursor-pointer">
+                        <div class="flex justify-between items-start mb-1"><h4 class="font-bold text-slate-900 text-sm">#0880 – Andi</h4><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-md text-[10px] font-extrabold">Selesai</span></div>
+                        <p class="text-xs font-medium text-slate-500">1 Barang • Prioritas</p>
+                        <p class="text-sm font-black text-slate-900 mt-2">Rp 55.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full overflow-hidden">
+                <div class="p-6 border-b border-slate-100 flex justify-between items-center shrink-0">
+                    <div><h3 class="text-xl font-extrabold text-slate-900 tracking-tight">Detail Pesanan #0881</h3><p class="text-xs font-semibold text-slate-500 mt-1">Budi Santoso • 08123456789</p></div>
+                    <div class="flex items-center gap-3">
+                        <a href="edit_pesanan.html" class="px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-xl text-xs font-extrabold transition flex items-center gap-2"><i class="fas fa-edit"></i> Edit</a>
+                        <button class="px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 rounded-xl text-xs font-extrabold transition flex items-center gap-2"><i class="fas fa-trash"></i> Hapus</button>
+                    </div>
+                </div>
+
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-slate-50/80 p-5 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-medium">
+                            <div class="flex justify-between"><span class="text-slate-400">Tanggal Masuk:</span><span class="font-bold text-slate-800">17 Okt 2026</span></div>
+                            <div class="flex justify-between"><span class="text-slate-400">Status Bayar:</span><span class="font-extrabold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded text-[10px]">LUNAS – QRIS</span></div>
+                            <div class="flex justify-between"><span class="text-slate-400">Drop Point:</span><span class="font-bold text-slate-800">Oro-oro Dowo</span></div>
+                            <div class="flex justify-between"><span class="text-slate-400">Tanggal Selesai:</span><span class="font-bold text-slate-500">Belum selesai</span></div>
+                        </div>
+                        <div class="bg-brand-darkCard text-white p-5 rounded-2xl flex flex-col justify-between">
+                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">Status Pengerjaan</p>
+                            <div>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">STATUS SAAT INI</p>
+                                <select class="w-full bg-slate-800 border border-slate-700 text-white font-extrabold text-sm rounded-xl px-3 py-2 outline-none focus:border-brand-yellow">
+                                    <option>Diterima</option><option selected>Sedang Diproses</option><option>Selesai Diproses</option><option>Diambil</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-3">Daftar Barang (2 Item)</h4>
+                        <div class="space-y-3">
+                            <div class="p-4 border border-slate-200 rounded-2xl flex justify-between items-center bg-white">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 border border-slate-200"><i class="fas fa-camera text-lg"></i></div>
+                                    <div><h5 class="font-extrabold text-slate-900 text-sm">Sepatu Nike Air Max <span class="text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Putih</span></h5><div class="text-xs text-slate-500 space-y-0.5 mt-1 font-medium"><p><i class="fas fa-check text-brand-yellowHover mr-1"></i> Basic & White Shoes (30K)</p><p><i class="fas fa-check text-brand-yellowHover mr-1"></i> Unyellowing (30K)</p><p><i class="fas fa-bolt text-blue-500 mr-1"></i> Express (+10K)</p></div></div>
+                                </div>
+                                <span class="font-black text-slate-900 text-sm">Rp 70.000</span>
+                            </div>
+                            <div class="p-4 border border-slate-200 rounded-2xl flex justify-between items-center bg-white">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 border border-slate-200"><i class="fas fa-upload text-sm"></i></div>
+                                    <div><h5 class="font-extrabold text-slate-900 text-sm">Tas Coach <span class="text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded ml-1">Hitam</span></h5><div class="text-xs text-slate-500 space-y-0.5 mt-1 font-medium"><p><i class="fas fa-check text-brand-yellowHover mr-1"></i> Deep Clean Tas M (35K)</p><p><i class="fas fa-clock text-slate-400 mr-1"></i> Reguler (Free)</p></div></div>
+                                </div>
+                                <span class="font-black text-slate-900 text-sm">Rp 35.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-3">Dokumentasi Foto Sebelum & Sesudah</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-xs font-bold text-slate-700 mb-2">Foto Before / Sebelum Dicuci</p>
+                                <div class="w-full h-40 bg-slate-200 rounded-2xl overflow-hidden border border-slate-200"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Before" class="w-full h-full object-cover"></div>
+                                <p class="text-[10px] text-slate-400 mt-1">Contoh foto • bukan foto pelanggan</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-700 mb-2">Upload Foto After / Sesudah Dicuci</p>
+                                <div class="upload-box-trigger w-full h-40 border-2 border-dashed border-slate-300 rounded-2xl flex flex-col items-center justify-center text-center p-4 hover:bg-slate-50 cursor-pointer">
+                                    <i class="fas fa-upload text-xl text-slate-400 mb-2"></i><span class="text-xs font-extrabold text-slate-700">Pilih Foto After</span><span class="text-[10px] text-slate-400 mt-0.5">JPG atau PNG • Maks. 5 MB</span>
+                                </div>
+                                <p class="text-[10px] text-slate-400 mt-1">Belum diunggah • Unggah hasil pengerjaan sebelum mengirim dokumentasi.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-2xl flex justify-between items-center">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-brand-yellow/20 text-yellow-800 flex items-center justify-center text-sm font-bold"><i class="fab fa-whatsapp"></i></div>
+                                <div><h5 class="text-xs font-extrabold text-slate-900">Kirim Dokumentasi via WhatsApp</h5><p class="text-[10px] text-slate-500 font-medium">Budi Santoso • 08123456789</p><p class="text-[10px] text-yellow-800 font-medium mt-0.5">Foto After wajib diunggah sebelum dokumentasi penyelesaian dapat dikirim.</p></div>
+                            </div>
+                            <button disabled class="px-4 py-2 bg-slate-200 text-slate-400 rounded-xl text-xs font-bold cursor-not-allowed flex items-center gap-2"><i class="fas fa-paper-plane"></i> Kirim Foto After</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 border-t border-slate-100 flex justify-between items-center shrink-0 bg-white">
+                    <div><p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Keseluruhan</p><h3 class="text-2xl font-black text-slate-900">Rp 105.000</h3></div>
+                    <button class="px-6 py-3.5 bg-brand-darkCard hover:bg-slate-800 text-white rounded-xl text-xs font-extrabold transition shadow-lg flex items-center gap-2"><i class="fas fa-print"></i> Cetak Invoice</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src='js/main.js'></script></body></html>

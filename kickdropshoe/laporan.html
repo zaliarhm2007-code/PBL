@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang='id'><head><title>Laporan & Keuangan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0B1325',
+                            darkCard: '#0F172A',
+                            darkInput: '#1E293B',
+                            yellow: '#FACC15',
+                            yellowHover: '#EAB308',
+                            slateBg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head><body class='font-sans antialiased'>
+<div class="flex h-screen overflow-hidden bg-brand-slateBg">
+    
+    <aside class="w-[280px] bg-brand-navy text-slate-300 flex flex-col justify-between shadow-xl shrink-0 z-20 h-screen">
+        <div>
+            <!-- Brand Header -->
+            <div class="p-6 border-b border-slate-800/60 flex items-center gap-3">
+                <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-md border-2 border-slate-900 object-cover bg-white">
+                <div>
+                    <h1 class="text-base font-extrabold tracking-tight text-white leading-none">KICKDROPSHOE</h1>
+                    <p class="text-[10px] text-brand-yellow font-bold uppercase tracking-widest mt-1">OWNER</p>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="p-4 space-y-2">
+                
+            <a href="dashboard_owner.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-pie-chart w-5"></i> Dashboard
+            </a>
+                <a href="laporan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 text-white font-extrabold transition-all">
+                    <i class="fas fa-chart-line w-5"></i> Laporan Pendapatan
+                </a>
+            <a href="tambah_pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-plus w-5"></i> Tambah Pesanan
+            </a>
+            <a href="pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-list-ul w-5"></i> Daftar Pesanan
+            </a>
+            <a href="akun.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-user w-5"></i> Profil Akun
+            </a>
+            </nav>
+        </div>
+
+        <!-- User Profile Pill at Bottom -->
+        <div class="p-4 border-t border-slate-800/60 m-4 bg-slate-800/40 rounded-2xl">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 bg-brand-yellow text-slate-900 font-extrabold rounded-full flex items-center justify-center text-xs shadow-sm">
+                    SA
+                </div>
+                <div>
+                    <p class="text-xs font-extrabold text-white leading-tight">Super Admin</p>
+                    <p class="text-[10px] text-emerald-400 font-semibold">Online</p>
+                </div>
+            </div>
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full py-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-all border border-slate-700/50">
+                <i class="fas fa-sign-out-alt"></i> Keluar
+            </a>
+        </div>
+    </aside>
+    
+    <main class="flex-1 flex flex-col h-full overflow-y-auto">
+        <header class="bg-white border-b border-slate-200 px-8 py-5 flex justify-between items-center sticky top-0 z-10">
+            <h2 class="text-xl font-extrabold text-slate-800 tracking-tight">Laporan & Keuangan</h2>
+            <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-600 flex items-center gap-2"><i class="far fa-calendar"></i> 17 Sep 2026</div>
+        </header>
+
+        <div class="p-8 max-w-7xl mx-auto w-full space-y-6">
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <div class="relative"><input type="text" class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-600 outline-none pr-10" placeholder="dd/mm/yyyy"><i class="far fa-calendar absolute right-3.5 top-3.5 text-slate-400 text-xs"></i></div>
+                    <span class="text-xs font-semibold text-slate-400">sampai</span>
+                    <div class="relative"><input type="text" class="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-600 outline-none pr-10" placeholder="dd/mm/yyyy"><i class="far fa-calendar absolute right-3.5 top-3.5 text-slate-400 text-xs"></i></div>
+                    <button class="px-6 py-3 bg-brand-yellow hover:bg-brand-yellowHover text-slate-900 text-xs font-extrabold rounded-xl transition shadow-md shadow-brand-yellow/20">Filter Data</button>
+                </div>
+                <button class="px-6 py-3 bg-brand-darkCard hover:bg-slate-800 text-white text-xs font-extrabold rounded-xl transition shadow-md flex items-center gap-2"><i class="fas fa-file-pdf"></i> Export PDF</button>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <div class="bg-brand-darkCard text-white rounded-3xl p-8 shadow-xl"><p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-3">PESANAN SELESAI</p><h3 class="text-3xl font-black text-brand-yellow">145</h3></div>
+                <div class="bg-brand-darkCard text-white rounded-3xl p-8 shadow-xl"><p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-3">BARANG DICUCI</p><h3 class="text-3xl font-black text-brand-yellow">210</h3></div>
+                <div class="bg-brand-darkCard text-white rounded-3xl p-8 shadow-xl"><p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-3">TOTAL PENDAPATAN</p><h3 class="text-3xl font-black text-emerald-400">Rp 8.550.000</h3></div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <h3 class="text-sm font-extrabold text-slate-800 tracking-tight border-b border-slate-100 pb-4">Rincian Transaksi Berdasarkan Metode Pembayaran</h3>
+                <div class="space-y-4">
+                    <div class="p-5 border border-slate-200 rounded-2xl flex justify-between items-center">
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-lg shadow-sm"><i class="fas fa-money-bill-wave"></i></div><h4 class="font-extrabold text-slate-900 text-sm">Cash (Tunai)</h4></div>
+                        <span class="font-black text-slate-900 text-base">Rp 4.200.000</span>
+                    </div>
+                    <div class="p-5 border border-slate-200 rounded-2xl flex justify-between items-center">
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center text-lg shadow-sm"><i class="fas fa-qrcode"></i></div><h4 class="font-extrabold text-slate-900 text-sm">QRIS</h4></div>
+                        <span class="font-black text-slate-900 text-base">Rp 3.100.000</span>
+                    </div>
+                    <div class="p-5 border border-slate-200 rounded-2xl flex justify-between items-center">
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-lg shadow-sm"><i class="fas fa-credit-card"></i></div><h4 class="font-extrabold text-slate-900 text-sm">Transfer</h4></div>
+                        <span class="font-black text-slate-900 text-base">Rp 1.250.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src='js/main.js'></script></body></html>

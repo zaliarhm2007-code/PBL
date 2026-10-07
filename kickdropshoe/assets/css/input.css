@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* KickDropShoe Custom Stylesheet */
+:root {
+    --brand-navy: #0B1325;
+    --brand-dark-card: #0F172A;
+    --brand-dark-input: #1E293B;
+    --brand-yellow: #FACC15;
+    --brand-yellow-hover: #EAB308;
+    --brand-slate-bg: #F8FAFC;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--brand-slate-bg);
+    color: #1e293b;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Button & Card Micro-interactions */
+.btn-yellow {
+    background-color: var(--brand-yellow);
+    color: #0f172a;
+    font-weight: 800;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-yellow:hover {
+    background-color: var(--brand-yellow-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px -5px rgba(250, 204, 21, 0.3);
+}
+
+.card-dark {
+    background-color: var(--brand-dark-card);
+    color: #ffffff;
+}
+
+.input-dark {
+    background-color: var(--brand-dark-input);
+    border: 1px solid rgba(51, 65, 85, 0.8);
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.25s ease-out forwards;
+}

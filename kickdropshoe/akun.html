@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang='id'><head><title>Pengaturan Akun</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0B1325',
+                            darkCard: '#0F172A',
+                            darkInput: '#1E293B',
+                            yellow: '#FACC15',
+                            yellowHover: '#EAB308',
+                            slateBg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head><body class='font-sans antialiased'>
+<div class="flex h-screen overflow-hidden bg-brand-slateBg">
+    
+    <aside class="w-[280px] bg-brand-navy text-slate-300 flex flex-col justify-between shadow-xl shrink-0 z-20 h-screen">
+        <div>
+            <!-- Brand Header -->
+            <div class="p-6 border-b border-slate-800/60 flex items-center gap-3">
+                <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-md border-2 border-slate-900 object-cover bg-white">
+                <div>
+                    <h1 class="text-base font-extrabold tracking-tight text-white leading-none">KICKDROPSHOE</h1>
+                    <p class="text-[10px] text-brand-yellow font-bold uppercase tracking-widest mt-1">OWNER</p>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="p-4 space-y-2">
+                
+            <a href="dashboard_owner.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-pie-chart w-5"></i> Dashboard
+            </a>
+            <a href="laporan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-chart-line w-5"></i> Laporan Pendapatan
+            </a>
+            <a href="tambah_pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-plus w-5"></i> Tambah Pesanan
+            </a>
+            <a href="pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all">
+                <i class="fas fa-list-ul w-5"></i> Daftar Pesanan
+            </a>
+                <a href="akun.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 text-white font-extrabold transition-all">
+                    <i class="fas fa-user w-5"></i> Profil Akun
+                </a>
+            </nav>
+        </div>
+
+        <!-- User Profile Pill at Bottom -->
+        <div class="p-4 border-t border-slate-800/60 m-4 bg-slate-800/40 rounded-2xl">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 bg-brand-yellow text-slate-900 font-extrabold rounded-full flex items-center justify-center text-xs shadow-sm">
+                    SA
+                </div>
+                <div>
+                    <p class="text-xs font-extrabold text-white leading-tight">Super Admin</p>
+                    <p class="text-[10px] text-emerald-400 font-semibold">Online</p>
+                </div>
+            </div>
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full py-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-all border border-slate-700/50">
+                <i class="fas fa-sign-out-alt"></i> Keluar
+            </a>
+        </div>
+    </aside>
+    
+    <main class="flex-1 flex flex-col h-full overflow-y-auto">
+        <header class="bg-white border-b border-slate-200 px-8 py-5 flex justify-between items-center sticky top-0 z-10">
+            <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">Pengaturan Akun</h2>
+            <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-600 flex items-center gap-2"><i class="far fa-calendar"></i> 17 Sep 2026</div>
+        </header>
+        <div class="p-8 max-w-4xl mx-auto w-full">
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-6">
+                <h3 class="text-base font-extrabold text-slate-900 tracking-tight">Pengaturan Profil</h3>
+                <div class="flex items-center gap-6 pb-6 border-b border-slate-100">
+                    <div class="w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center text-slate-900 font-black text-2xl shadow-inner">K</div>
+                    <div><h4 class="text-2xl font-black text-slate-900 tracking-tight">SUPER ADMIN</h4><span class="inline-block mt-1 px-3 py-1 bg-yellow-50 text-brand-yellowHover border border-yellow-200 rounded-full text-[10px] font-black uppercase tracking-wider">OWNER</span></div>
+                </div>
+                <div class="space-y-4 max-w-lg">
+                    <div><label class="block text-xs font-extrabold text-slate-400 uppercase tracking-wider mb-2">Ganti Password</label><input type="password" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-xs font-medium text-slate-800 outline-none focus:ring-2 focus:ring-brand-yellow" placeholder="Masukkan password baru..."></div>
+                    <button class="px-6 py-3.5 bg-brand-darkCard hover:bg-slate-800 text-white text-xs font-extrabold rounded-xl transition shadow-md">Simpan Perubahan</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src='js/main.js'></script></body></html>

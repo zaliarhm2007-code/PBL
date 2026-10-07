@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Login - KickDropShoe</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0B1325',
+                            darkCard: '#0F172A',
+                            darkInput: '#1E293B',
+                            yellow: '#FACC15',
+                            yellowHover: '#EAB308',
+                            slateBg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="bg-brand-navy min-h-screen flex items-center justify-center p-4 font-sans antialiased">
+    <div class="bg-white rounded-3xl w-full max-w-md p-10 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2.5 bg-brand-yellow"></div>
+        <div class="text-center mb-8 pt-2">
+         <img src="assets/logo.png" alt="Logo KickDropShoe" class="w-24 h-24 mx-auto mb-4 object-contain mix-blend-multiply">
+            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">KICKDROPSHOE</h1>
+            <p class="text-xs text-slate-500 font-medium mt-1">Sistem Informasi Manajemen</p>
+        </div>
+
+        <form id="login-form" action="dashboard_owner.html" class="space-y-5">
+            <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2">Username / Email</label>
+                <input type="text" id="username" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-yellow" value="admin@kickdrop.com" required>
+            </div>
+            <div>
+                <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-2">Password</label>
+                <input type="password" id="password" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-yellow" value="••••••••••••" required>
+            </div>
+            <button type="submit" class="w-full py-4 bg-brand-yellow hover:bg-brand-yellowHover text-slate-900 font-extrabold text-sm rounded-xl transition-all shadow-lg shadow-brand-yellow/30 mt-4 tracking-wide">
+                Login
+            </button>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.toLowerCase();
+            if (username.includes('karyawan') || username.includes('bagas')) {
+                window.location.href = 'dashboard_karyawan.html';
+            } else {
+                window.location.href = 'dashboard_owner.html';
+            }
+        });
+    </script>
+</body>
+</html>
