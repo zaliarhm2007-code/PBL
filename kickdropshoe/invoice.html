@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang='id'>
+<head>
+    <title>Pratinjau Invoice #0881</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0B1325',
+                            darkCard: '#0F172A',
+                            darkInput: '#1E293B',
+                            yellow: '#FACC15',
+                            yellowHover: '#EAB308',
+                            slateBg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class='font-sans antialiased bg-brand-slateBg print:bg-white'>
+<div class="flex h-screen overflow-hidden">
+    
+    <!-- Sidebar (Hilang hanya saat dicetak) -->
+    <aside class="w-[280px] bg-brand-navy text-slate-300 flex flex-col justify-between shadow-xl shrink-0 z-20 h-screen print:hidden">
+        <div>
+            <div class="p-6 border-b border-slate-800/60 flex items-center gap-3">
+               <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-md border-2 border-slate-900 object-cover bg-white">
+                <div>
+                    <h1 class="text-base font-extrabold tracking-tight text-white leading-none">KICKDROPSHOE</h1>
+                    <p class="text-[10px] text-brand-yellow font-bold uppercase tracking-widest mt-1">OWNER</p>
+                </div>
+            </div>
+            <nav class="p-4 space-y-2">
+                <a href="dashboard_owner.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all"><i class="fas fa-pie-chart w-5"></i> Dashboard</a>
+                <a href="laporan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all"><i class="fas fa-chart-line w-5"></i> Laporan Pendapatan</a>
+                <a href="tambah_pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all"><i class="fas fa-plus w-5"></i> Tambah Pesanan</a>
+                <a href="pesanan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 text-white font-extrabold transition-all"><i class="fas fa-list-ul w-5"></i> Daftar Pesanan</a>
+                <a href="akun.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white font-bold transition-all"><i class="fas fa-user w-5"></i> Profil Akun</a>
+            </nav>
+        </div>
+        <div class="p-4 border-t border-slate-800/60 m-4 bg-slate-800/40 rounded-2xl">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 bg-brand-yellow text-slate-900 font-extrabold rounded-full flex items-center justify-center text-xs shadow-sm">SA</div>
+                <div><p class="text-xs font-extrabold text-white leading-tight">Super Admin</p><p class="text-[10px] text-emerald-400 font-semibold">Online</p></div>
+            </div>
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full py-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition-all border border-slate-700/50"><i class="fas fa-sign-out-alt"></i> Keluar</a>
+        </div>
+    </aside>
+    
+    <main class="flex-1 flex flex-col h-full overflow-y-auto print:overflow-visible">
+        
+        <!-- Header (Hilang hanya saat dicetak) -->
+        <header class="bg-white border-b border-slate-200 px-8 py-5 flex justify-between items-center sticky top-0 z-10 shrink-0 print:hidden">
+            <div>
+                <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">Pratinjau Invoice</h2>
+                <p class="text-sm font-medium text-slate-500 mt-1">Periksa rincian pesanan #0881 sebelum mencetak.</p>
+            </div>
+            <div class="bg-slate-100 px-4 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-600 flex items-center gap-2"><i class="far fa-calendar"></i> 17 Sep 2026</div>
+        </header>
+
+        <div class="p-8 flex flex-col items-center gap-6 print:p-0">
+            
+            <!-- Tombol Aksi (Hilang hanya saat dicetak) -->
+            <div class="w-full max-w-4xl flex justify-between items-center print:hidden">
+                <a href="pesanan.html" class="px-5 py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-900 rounded-xl text-sm font-extrabold transition flex items-center gap-2 shadow-sm"><i class="fas fa-arrow-left"></i> Kembali ke Detail</a>
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="px-5 py-2.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-900 rounded-xl text-sm font-extrabold transition flex items-center gap-2 shadow-sm"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
+                    <button onclick="window.print()" class="px-5 py-2.5 bg-brand-yellow hover:bg-brand-yellowHover text-slate-900 rounded-xl text-sm font-extrabold transition flex items-center gap-2 shadow-sm"><i class="fas fa-print"></i> Cetak Sekarang</button>
+                </div>
+            </div>
+
+            <!-- KERTAS INVOICE (Yang akan tercetak) -->
+            <div class="w-full max-w-4xl bg-white shadow-xl border border-slate-200 print:shadow-none print:border-none print:max-w-full">
+                <!-- Garis Kuning Atas -->
+                <div class="h-2 w-full bg-brand-yellow"></div>
+                
+                <div class="p-10 space-y-8">
+                   <!-- Header Invoice -->
+<div class="flex justify-between items-start">
+    <!-- Bagian Kiri (Logo & Alamat) -->
+    <div class="space-y-2">
+        <div class="flex items-center gap-3 mb-4">
+            <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full shadow-md border-1.5 border-slate-900 object-cover bg-white">
+            <h2 class="text-2xl font-black text-slate-900">KickDropShoe</h2>
+        </div>
+        <p class="text-sm font-medium text-slate-500">Jl. Soekarno Hatta No. 12, Malang</p>
+        <p class="text-sm font-medium text-slate-500">Telp 0812-3456-7890</p>
+    </div>
+    
+    <!-- Bagian Kanan (Nomor Invoice) -->
+    <div class="text-right space-y-1">
+        <p class="text-lg font-black text-slate-900">NOTA TRANSAKSI</p>
+        <h1 class="text-3xl font-black text-slate-900">#0881</h1>
+        <p class="text-sm font-medium text-slate-500 mt-2">Tanggal: 17 Okt 2026</p>
+    </div>
+</div>
+
+                    <!-- Info Pelanggan -->
+                    <div class="flex justify-between items-start">
+                        <div class="space-y-1">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">PELANGGAN</p>
+                            <p class="text-lg font-black text-slate-900">Budi Santoso</p>
+                            <p class="text-sm font-medium text-slate-500">No WhatsApp: 08123456789</p>
+                            <p class="text-sm font-medium text-slate-500">Drop Point: Oro-oro Dowo</p>
+                        </div>
+                        <div class="text-right space-y-2">
+                            <div class="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-md text-xs font-bold mb-1">LUNAS - QRIS</div>
+                            <p class="text-sm font-medium text-slate-500">Status: Sedang Diproses</p>
+                            <p class="text-sm font-medium text-slate-500">Tanggal Selesai: Belum selesai</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabel Pesanan -->
+                    <div class="w-full">
+                        <div class="bg-brand-darkCard text-white px-5 py-4 flex font-bold text-sm">
+                            <div class="flex-1">Deskripsi / Barang</div>
+                            <div class="w-20 text-center">Qty</div>
+                            <div class="w-32 text-right">Harga</div>
+                            <div class="w-32 text-right">Subtotal</div>
+                        </div>
+                        
+                        <!-- Item 1 -->
+                        <div class="px-5 py-4 border-b border-slate-200 flex text-sm">
+                            <div class="flex-1 space-y-1">
+                                <p class="font-extrabold text-slate-900">Sepatu Nike Air Max • Putih</p>
+                                <p class="text-xs font-medium text-slate-500">Basic & White Shoes: Rp 30.000<br>Unyellowing: Rp 30.000<br>Express (1-2 Hari): Rp 10.000</p>
+                            </div>
+                            <div class="w-20 text-center font-medium text-slate-700">1</div>
+                            <div class="w-32 text-right font-medium text-slate-700">Rp 70.000</div>
+                            <div class="w-32 text-right font-extrabold text-slate-900">Rp 70.000</div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="px-5 py-4 border-b border-slate-200 flex text-sm">
+                            <div class="flex-1 space-y-1">
+                                <p class="font-extrabold text-slate-900">Tas Coach • Hitam</p>
+                                <p class="text-xs font-medium text-slate-500">Deep Clean Tas M: Rp 35.000<br>Reguler (4-5 Hari): Free</p>
+                            </div>
+                            <div class="w-20 text-center font-medium text-slate-700">1</div>
+                            <div class="w-32 text-right font-medium text-slate-700">Rp 35.000</div>
+                            <div class="w-32 text-right font-extrabold text-slate-900">Rp 35.000</div>
+                        </div>
+                    </div>
+
+                    <!-- Total Akhir -->
+                    <div class="bg-slate-50 p-5 rounded-xl flex justify-between items-center border border-slate-100">
+                        <p class="text-base font-bold text-slate-700">Total Akhir</p>
+                        <p class="text-3xl font-black text-slate-900">Rp 105.000</p>
+                    </div>
+
+                    <!-- Ketentuan & Footer -->
+                    <div class="space-y-6 pt-4">
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">KETENTUAN</p>
+                            <p class="text-xs font-medium text-slate-700">* Barang yang sudah diambil tidak dapat dikembalikan.</p>
+                        </div>
+                        <hr class="border-slate-200">
+                        <p class="text-center font-bold text-slate-900">Terima kasih atas kepercayaan Anda!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-xs font-medium text-slate-400 print:hidden mt-2">Tombol dan navigasi tidak termasuk dalam hasil cetak.</p>
+        </div>
+    </main>
+</div>
+<script src='js/main.js'></script>
+</body>
+</html>
