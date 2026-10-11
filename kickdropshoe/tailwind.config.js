@@ -11,8 +11,8 @@ module.exports = {
           navy: '#0B1325',
           darkCard: '#0F172A',
           darkInput: '#1E293B',
-          yellow: '#FACC15',
-          yellowHover: '#EAB308',
+          yellow: '#FFFF00',
+          yellowHover: '#CCCC00',
           slateBg: '#F8FAFC'
         }
       }
